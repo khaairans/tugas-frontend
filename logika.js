@@ -37,6 +37,33 @@ console.log("F1 kosong :", hitungTersedia([])); // harus menampilkan 0
 // Kembalikan item yang id-nya cocok. Kalau tidak ada, kembalikan null.
 // ─────────────────────────────────────────────
 
+// LANGKAH 1 — PAHAMI
+// Masukan: daftar item (array of objects) dan sebuah angka id (number)
+// Keluaran: satu object item utuh yang id-nya cocok
+// LANGKAH 2 — CONTOH
+// Normal: id 1 ada di data maka kembalikan object id 1 tersebut
+// Kasus tepi: id 99 tidak ditemukan maka kembalikan null
+// LANGKAH 3 — LANGKAH (pseudocode)
+// 1. untuk tiap item di daftar:
+// 2. kalau id item sama dengan id yang dicari, kembalikan item tersebut
+// 3. kalau perulangan selesai dan tidak ada yang cocok, kembalikan null
+// LANGKAH 4 — TERJEMAHKAN
+function cariBerdasarkanId(daftar, id) {
+  for (const item of daftar) {
+    // menggunakan === agar tipe datanya terjamin sebagai number
+    if (item.id === id) {
+        // menggunakan return agar perulangan berhenti saat id ditemukan sehingga tidak perlu memeriksa item lain
+        // menyerahkan hasilnya ke pemanggil
+        return item; 
+    }
+  }
+  // jika tidak ada hasil, maka kembalikan null dengan sengaja sebagai jawaban "tidak ada"
+  return null;
+}
+
+console.log("F2 normal :", cariBerdasarkanId(daftarItem, 1)); // harus menampilkan object Rendang
+console.log("F2 tidak ada:", cariBerdasarkanId(daftarItem, 99)); // harus menampilkan null
+
 
 // ─────────────────────────────────────────────
 // FUNGSI 3 — saringKategori(daftar, kategori)
