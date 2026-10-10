@@ -16,5 +16,4 @@ const daftarItem = [
   { id: 7, nama: "Kopi Kawa Daun", kategori: "Minuman", harga: 8000, tersedia: false },
   { id: 8, nama: "Lamang Tapai", kategori: "Camilan", harga: 15000, tersedia: false },
   { id: 9, nama: "Kerupuk Sanjai", kategori: "Camilan", harga: 26000, tersedia: true },
-
 ];
