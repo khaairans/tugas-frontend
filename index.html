@@ -2,12 +2,115 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Tugas 1A — buka Console (F12)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Kuliner Minang</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-  <p>Semua hasil ada di <strong>Console</strong>: tekan F12 → tab Console.</p>
-  <!-- Jangan ubah urutan: data.js harus dimuat sebelum logika.js -->
-  <script src="data.js"></script>
-  <script src="logika.js"></script>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Tag header dan nav (semantik) dipakai agar pembaca layar bisa membedakan mana bagian kepala halaman dan navigasi utama, bukan sekadar memakai div -->
+  <header>
+    <nav class="flex flex-col gap-3 md:flex-row md:justify-between md:items-center px-6 py-4 bg-green-800 text-white shadow-md">
+      <a href="#" class="text-xl font-bold">Kuliner Minang</a>
+      <div class="flex gap-4 font-medium">
+        <a href="#katalog" class="hover:underline">Katalog</a>
+        <a href="#kontak" class="hover:underline">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <section class="mb-10 text-center md:text-left">
+      <h1 class="text-3xl font-bold text-green-900">Katalog Kuliner Minang</h1>
+      <p class="mt-2 text-gray-600">Sajian makanan utama, minuman, dan camilan khas Sumatera Barat.</p>
+    </section>
+
+    <section id="katalog">
+      <h2 class="text-2xl font-bold mb-6 border-b-2 border-green-200 pb-2">Menu Kami</h2>
+      
+      <!-- Grid dipilih di sini supaya kartu-kartu tersusun rapi membentuk baris dan kolom yang sama lebarnya. Responsif: 1 kolom di HP, 2 kolom di tablet (md), dan 3 kolom di laptop (lg) -->
+      <!-- Gap dipakai pada induk grid ini agar jarak antar kartu terbagi rata di tengah tanpa menyisakan ruang kosong di ujung kiri atau kanan -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Tag article dipilih untuk membungkus satu menu karena isi kartu ini utuh dan maknanya tetap bisa dipahami meski dilepas dari halaman utamanya -->
+        <!-- Kartu 1 -->
+        <article class="flex flex-col p-5 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-800">Rendang</h3>
+          <p class="text-sm text-gray-500 mb-2">Makanan Utama</p>
+          <!-- Menggunakan mt-auto (margin-top: auto) di dalam flex-col agar harga selalu terdorong ke paling bawah kartu walau tinggi teks judul berbeda-beda -->
+          <p class="mt-auto font-bold text-green-700">Rp35.000</p>
+        </article>
+
+        <!-- Kartu 2 -->
+        <article class="flex flex-col p-5 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-800">Sate Padang</h3>
+          <p class="text-sm text-gray-500 mb-2">Makanan Utama</p>
+          <p class="mt-auto font-bold text-green-700">Rp25.000</p>
+        </article>
+
+        <!-- Kartu 3 -->
+        <article class="flex flex-col p-5 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-800">Soto Padang</h3>
+          <p class="text-sm text-gray-500 mb-2">Makanan Utama</p>
+          <p class="mt-auto font-bold text-green-700">Rp18.000</p>
+        </article>
+
+        <!-- Kartu 4 -->
+        <article class="flex flex-col p-5 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-800">Dendeng Balado</h3>
+          <p class="text-sm text-gray-500 mb-2">Makanan Utama</p>
+          <p class="mt-auto font-bold text-green-700">Rp20.000</p>
+        </article>
+
+        <!-- Kartu 5 -->
+        <article class="flex flex-col p-5 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-800">Teh Talua</h3>
+          <p class="text-sm text-gray-500 mb-2">Minuman</p>
+          <p class="mt-auto font-bold text-green-700">Rp9.000</p>
+        </article>
+
+        <!-- Kartu 6 -->
+        <article class="flex flex-col p-5 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-800">Es Tebak</h3>
+          <p class="text-sm text-gray-500 mb-2">Minuman</p>
+          <p class="mt-auto font-bold text-green-700">Rp12.000</p>
+        </article>
+
+        <!-- Kartu 7 -->
+        <article class="flex flex-col p-5 bg-gray-50 border border-gray-200 rounded-lg shadow-sm opacity-75">
+          <h3 class="text-lg font-semibold text-gray-800">Kopi Kawa Daun</h3>
+          <p class="text-sm text-gray-500 mb-2">Minuman</p>
+          <div class="mt-auto flex justify-between items-center">
+            <p class="font-bold text-green-700">Rp8.000</p>
+            <span class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">Habis</span>
+          </div>
+        </article>
+
+        <!-- Kartu 8 -->
+        <article class="flex flex-col p-5 bg-gray-50 border border-gray-200 rounded-lg shadow-sm opacity-75">
+          <h3 class="text-lg font-semibold text-gray-800">Lamang Tapai</h3>
+          <p class="text-sm text-gray-500 mb-2">Camilan</p>
+          <div class="mt-auto flex justify-between items-center">
+            <p class="font-bold text-green-700">Rp15.000</p>
+            <span class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded">Habis</span>
+          </div>
+        </article>
+
+        <!-- Kartu 9 -->
+        <article class="flex flex-col p-5 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-lg font-semibold text-gray-800">Kerupuk Sanjai</h3>
+          <p class="text-sm text-gray-500 mb-2">Camilan</p>
+          <p class="mt-auto font-bold text-green-700">Rp26.000</p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontak" class="mt-10 px-6 py-8 text-center text-sm text-gray-600 bg-gray-200">
+    <p>Katalog Kuliner Minang &copy; 2026. Buka setiap hari 10.00 sampai 22.00.</p>
+  </footer>
+
 </body>
 </html>
